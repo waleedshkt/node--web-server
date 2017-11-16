@@ -38,13 +38,13 @@ app.get('/', (req, res) => {
     //res.send('<h1>Hello, Express!</h1>');
     res.render('home.hbs', {
         message: 'Welcome to some website!',
-        pageTitle: 'Home Page'
+        pageTitle: 'Home'
     });
     
 });
 app.get('/about', (req, res) => {
-    res.render('about.hbs',{
-        pageTitle: 'About Page'
+    res.render('about.hbs', {
+        pageTitle: 'About'
     });
 });
 
@@ -53,6 +53,14 @@ app.get('/bad', (req, res) => {
         Error: 'Unable to fullfil the request'
     });
 });
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects',
+        greetings: "My Projects' Portfolio"
+    });
+});
+
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
 });
